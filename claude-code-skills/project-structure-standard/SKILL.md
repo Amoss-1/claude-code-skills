@@ -1,3 +1,8 @@
+---
+name: project-structure-standard
+description: "Python项目结构统一规范：配置集中、子目录划分、调试隔离、★标记改点"
+---
+
 # project-structure-standard — Python 项目结构统一规范
 
 ## 一句话
