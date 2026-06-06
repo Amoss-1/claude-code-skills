@@ -451,6 +451,18 @@ print("✓ 兼容性验证通过")
 
 **关键原则：不删原版，副本验证，最后改名完成切换。**
 
+**⚠️ 迁移踩坑：外部文件路径**
+
+重构后 `config.py` 里的目录常量（如 `DATA_DIR`）默认会指向项目内的子目录（如 `project/data/`），但实际文件可能在其他项目的下载目录（如 `ops-automation/downloads/`）。迁移完必须确认路径是否指向有实际文件的地方，否则静默读不到数据、不报错。
+
+```python
+# ❌ 默认项目内 data/——通常是空目录
+DATA_DIR = os.path.join(PROJECT_ROOT, 'data')
+
+# ✅ 明确指向实际文件来源
+DATA_DIR = r'D:\xunihuangjing\projects\ops-automation\downloads'
+```
+
 ---
 
 ## 附：项目类型速查
